@@ -1,18 +1,7 @@
-const { ApolloServer, gql } = require(`apollo-server`);
+require(`dotenv`).config();
+import { ApolloServer } from "apollo-server";
+import schema from "./schema";
+const server = new ApolloServer({ schema });
 
-const typeDefs = gql`
-  type Query {
-    hellow: String
-  }
-`;
-
-const resolvers = {
-  Query: {
-    hellow: () => "hellow",
-  },
-};
-const server = new ApolloServer({ resolvers, typeDefs });
-server.listen().then(() => console.log("hi"));
-
-console.log(5);
-asdfasf;
+const PORT = process.env.PORT;
+server.listen(PORT).then(() => console.log(PORT));
