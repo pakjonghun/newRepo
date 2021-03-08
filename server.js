@@ -13,5 +13,3 @@ const resolvers = {
 };
 const server = new ApolloServer({ resolvers, typeDefs });
 server.listen().then(() => console.log("hi"));
-
-console.log(abc);
